@@ -46,7 +46,7 @@ def validate_data(values):
                 f"Exactly 6 values required, you provided {len(values)}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print (f"Invalid data: {e}, please try again.\n")
         return False
 
     return True
