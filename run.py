@@ -136,7 +136,7 @@ def main():
     Run all program functions
     """
     os.system('clear')
-    for height in range(25):
+    for height in range(99):
         for width in range(79):
             if width == 78:
                 print('x', end='')
