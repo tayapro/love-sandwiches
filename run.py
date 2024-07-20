@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
 import os
+import curses
 
 class TermColors:
     HEADER = '\033[95m'
@@ -136,15 +137,19 @@ def main():
     Run all program functions
     """
     os.system('clear')
-    for height in range(99):
-        for width in range(79):
-            if width == 78:
-                print('x', end='')
-            elif width == 0:
-                print(height, end='')
-            else:
-                print('.', end='')
+    # for height in range(99):
+    #     for width in range(79):
+    #         if width == 78:
+    #             print('x', end='')
+    #         elif width == 0:
+    #             print(height, end='')
+    #         else:
+    #             print('.', end='')
+    #     print()
+    for skp in range(13):
         print()
+    print('hello')
+
     # input("0")
     # print(TermColors.WARNING + "Warning: Warning Test" + TermColors.ENDC)
     # print(f"{TermColors.OKGREEN}Greeeeeeeen!{TermColors.ENDC}")
@@ -159,4 +164,11 @@ def main():
 
 
 # print("Welcome to Love Sandwiches Data Automation")
-main()
+# main()
+def curses_demo(stdscr):
+    stdscr.clear()
+    stdscr.addstr(12, 30, "hello")
+    stdscr.refresh()
+    stdscr.getch()
+
+curses.wrapper(curses_demo)
