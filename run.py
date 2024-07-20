@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
+import os
 
 class TermColors:
     HEADER = '\033[95m'
@@ -134,10 +135,13 @@ def main():
     """
     Run all program functions
     """
+    os.system('clear')
     for height in range(25):
-        for width in range(80):
-            if width == 79:
+        for width in range(79):
+            if width == 78:
                 print('x', end='')
+            elif width == 0:
+                print(height, end='')
             else:
                 print('.', end='')
         print()
